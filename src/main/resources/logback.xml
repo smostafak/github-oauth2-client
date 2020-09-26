@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2013-2015 Caspian Inc. All rights reserved.
+  ~ CASPIAN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  ~
+  ~
+  ~
+  ~
+  ~
+  ~
+  ~
+  ~
+  -->
+
+<!--<configuration scan="true" scanPeriod="1800 seconds" debug="false">-->
+<configuration debug="false">
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>%-5p %d{HH:mm:ss.SSS} [%-16.16t] %-35.35C{0}:%03line - %m%n</pattern>
+      <!--<pattern>%-5p %d{HH:mm:ss.SSS} [%-20.20C{0}:%03line] - %m%n</pattern>-->
+    </encoder>
+  </appender>
+
+  <logger name="org.springframework" level="DEBUG"/>
+  <logger name="org.eclipse.jetty" level="INFO"/>
+  <logger name="org.eclipse.jetty.server.HttpChannel" level="DEBUG"/>
+  <logger name="org.springframework.web.servlet" level="WARN"/>
+  <logger name="org.springframework.security.web.FilterChainProxy" level="INFO"/>
+  <logger name="org.springframework.security.web.context" level="INFO"/>
+<!--  <logger name="org.hibernate" level="INFO"/>-->
+<!--  <logger name="io.netty" level="INFO"/>-->
+<!--  <logger name="java.sql" level="DEBUG" additivity="false"/>-->
+  <logger name="com.zaxxer.hikari" level="INFO"/>
+
+  <root level="DEBUG">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</configuration>
