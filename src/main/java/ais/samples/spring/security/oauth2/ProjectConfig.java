@@ -29,9 +29,8 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter {
     return new InMemoryClientRegistrationRepository(clientRegistration());
   }
 
-  @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.oauth2Login();
+    http.oauth2Login(c -> c.clientRegistrationRepository(clientRepository()));
 
     http.authorizeRequests()
         .anyRequest()
